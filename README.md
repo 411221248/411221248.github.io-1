@@ -7,6 +7,7 @@ char chess[8][8];
 char input;
 void check(short y,short x){
     int c=0;
+    int d=0;
     for (int i = x+1; i < 8; i++){
 
         if(chess[y][i]==input){
@@ -136,6 +137,18 @@ void check(short y,short x){
     }
     for (int i = 0; i < 8; i++){
         for (int j = 0; j < 8; j++){
+            if(chess[i][j]=='x'){
+                if(d==1){
+                    printf(",");
+                }else
+                    d=1;
+                printf("(%d,%d)",i,j);
+            }
+        }
+    }
+    printf("can be placed\n");
+    for (int i = 0; i < 8; i++){
+        for (int j = 0; j < 8; j++){
             printf("%c",chess[i][j]);
         }printf("\n");
     }
@@ -148,20 +161,22 @@ int main(){
     for (int i = 0; i < 8; i++){
         for (int j = 0; j < 8; ){
             scanf("%c",&chess[i][j]);
-            if (chess[i][j]=='\n')
+            if (chess[i][j]=='\n'||chess[i][j]==' ')
             {
                 continue;
             }
             j++;
         }
     }
+    printf("input ");
     scanf("%1d%c%1d",&x,&haha,&y);
     input=chess[x][y];
     if (input=='0'){
         return 0;
     }
+     printf("color %c\n",input);
     check(x,y);
-
+    
     return 0;
 }
 
