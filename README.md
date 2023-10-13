@@ -3,7 +3,6 @@ chess
 
 ```c=
 #include<stdio.h>
-#include<stdlib.h>
 char chess[8][8];
 char input;
 void check(short y,short x){
