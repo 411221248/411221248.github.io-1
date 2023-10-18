@@ -8,131 +8,30 @@ char input;
 void check(short y,short x){
     int c=0;
     int d=0;
-    for (int i = x+1; i < 8; i++){
+    for (int k = -1; k <2; k++){
+        for (int m = -1; m <2; m++){
+            int xt,yt;
+            int c=0;
+            if(k==-1)   xt=-1;
+            else    xt=8;
+            if(m==-1)   yt=-1;
+            else    yt=8;
+            for (int i = x+k,j=y+m; i !=xt &&j!=yt; i+=k,j+=m){
 
-        if(chess[y][i]==input){
-            break;
-        }
-        if(chess[y][i]!=input&&chess[y][i]!='0'){
-            c=1;
-        }
-        if(chess[y][i]=='0'){
-            if(c==1){
-                chess[y][i]='x';
-            }
-            break;
+                if(chess[j][i]==input){
+                    break;
+                }
+                if(chess[j][i]!=input&&chess[j][i]!='0'){
+                    c=1;
+                }
+                if(chess[j][i]=='0'){
+                    if(c==1){
+                        chess[j][i]='x';
+                    }
+                    break;
 
-        }
-    }
-    c=0;
-    for (int i = x-1; i >-1; i--){
-        if(chess[y][i]==input){
-            break;
-        }
-        if(chess[y][i]!=input&&chess[y][i]!='0'){
-            c=1;
-        }
-        if(chess[y][i]=='0'){
-            if(c==1){
-                chess[y][i]='x';
+                }
             }
-            break;
-        }
-    }
-    c=0;
-    for (int i = y-1; i >-1; i--){
-
-        if(chess[i][x]==input){
-            break;
-        }
-        if(chess[i][x]!=input&&chess[i][x]!='0'){
-            c=1;
-        }
-        if(chess[i][x]=='0'){
-            if(c==1){
-                chess[i][x]='x';
-            }
-            break;
-        }
-    }
-    c=0;
-    for (int i = y+1; i <8; i++){
-
-        if(chess[i][x]==input){
-            break;
-        }
-        if(chess[i][x]!=input&&chess[i][x]!='0'){
-            c=1;
-        }
-        if(chess[i][x]=='0'){
-            if(c==1){
-                chess[i][x]='x';
-            }
-            break;
-        }
-    }
-    c=0;
-    for (int i = y+1,j=x+1; i <8&&j<8; i++,j++){
-
-        if(chess[i][j]==input){
-            break;
-        }
-        if(chess[i][j]!=input&&chess[i][j]!='0'){
-            c=1;
-        }
-        if(chess[i][j]=='0'){
-            if(c==1){
-                chess[i][j]='x';
-            }
-            break;
-        }
-    }
-    c=0;
-    for (int i = y-1,j=x+1; i >=0&&j<8; i--,j++){
-
-        if(chess[i][j]==input){
-            break;
-        }
-        if(chess[i][j]!=input&&chess[i][j]!='0'){
-            c=1;
-        }
-        if(chess[i][j]=='0'){
-            if(c==1){
-                chess[i][j]='x';
-            }
-            break;
-        }
-    }
-    c=0;
-    for (int i = y+1,j=x-1; i <8&&j>=0; i++,j--){
-
-        if(chess[i][j]==input){
-            break;
-        }
-        if(chess[i][j]!=input&&chess[i][j]!='0'){
-            c=1;
-        }
-        if(chess[i][j]=='0'){
-            if(c==1){
-                chess[i][j]='x';
-            }
-            break;
-        }
-    }
-    c=0;
-    for (int i = y-1,j=x-1; i >=0&&j>=0; i--,j--){
-
-        if(chess[i][j]==input){
-            break;
-        }
-        if(chess[i][j]!=input&&chess[i][j]!='0'){
-            c=1;
-        }
-        if(chess[i][j]=='0'){
-            if(c==1){
-                chess[i][j]='x';
-            }
-            break;
         }
     }
     for (int i = 0; i < 8; i++){
