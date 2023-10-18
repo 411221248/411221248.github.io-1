@@ -11,7 +11,7 @@ void check(short y,short x){
     for (int k = -1; k <2; k++){
         for (int m = -1; m <2; m++){
             int xt,yt;
-            int c=0;
+            c=0;
             if(k==-1)   xt=-1;
             else    xt=8;
             if(m==-1)   yt=-1;
