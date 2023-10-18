@@ -12,24 +12,16 @@ void check(short y,short x){
         for (int m = -1; m <2; m++){
             int xt,yt;
             c=0;
-            if(k==-1)   xt=-1;
-            else    xt=8;
-            if(m==-1)   yt=-1;
-            else    yt=8;
+            xt=(k==-1)?-1:8;
+            yt=(m==-1)?-1:8;
             for (int i = x+k,j=y+m; i !=xt &&j!=yt; i+=k,j+=m){
-
-                if(chess[j][i]==input){
-                    break;
-                }
-                if(chess[j][i]!=input&&chess[j][i]!='0'){
-                    c=1;
-                }
+                if(chess[j][i]==input)  break;
+                if(chess[j][i]!=input&&chess[j][i]!='0')    c=1;
                 if(chess[j][i]=='0'){
                     if(c==1){
                         chess[j][i]='x';
                     }
                     break;
-
                 }
             }
         }
